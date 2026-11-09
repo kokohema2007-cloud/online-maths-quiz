@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منصة امتحانات ومراجعة رياضيات 1 (GEN002 Mathematics 1) | هندسة حلوان الأهلية</title>
+
+  <!-- Favicon Suite -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0f19">
+  <meta name="msapplication-TileColor" content="#0b0f19">
+
+  <!-- Search Engine & Open Graph Meta Tags -->
+  <meta name="description" content="منصة تفاعلية شاملة لمراجعة وامتحانات مادة الرياضيات 1 (GEN002 Mathematics 1) بكلية الهندسة - جامعة حلوان الأهلية. تشمل تفاضل الدوال المثلثية والزائدية، الاشتقاق الضمني واللوغاريتمي، النهايات وقاعدة لوبيتال، المشتقات الجزئية، جداول الصواب والمنطق، وضع التحدي والدمار، وتشخيص نقاط الضعف بالذكاء الاصطناعي.">
+  <meta name="keywords" content="Mathematics 1, GEN002, Calculus, تفاضل وتكامل, دوال زائدية, اشتقاق ضمني, قاعدة لوبيتال, مشتقات جزئية, هندسة حلوان, د. أماني محمد">
+  <meta name="author" content="Helwan National University - Faculty of Engineering">
+
+  <!-- Open Graph / WhatsApp / Facebook / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kokohema2007-cloud.github.io/online-maths-quiz/">
+  <meta property="og:title" content="📐 منصة امتحانات ومراجعة رياضيات 1 | GEN002 Mathematics 1">
+  <meta property="og:description" content="تدرب على مسائل الامتحانات الحقيقية، وضع التحدي والدمار 🔥، حاسبة التفاضل خطوة بخطوة ⚡، ومحاكي جداول الصواب مع تشخيص الذكاء الاصطناعي 🤖">
+  <meta property="og:image" content="https://kokohema2007-cloud.github.io/online-maths-quiz/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://kokohema2007-cloud.github.io/online-maths-quiz/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="منصة مراجعة الرياضيات 1 التفاعلية">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:site_name" content="منصة رياضيات 1 التفاعلية">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://kokohema2007-cloud.github.io/online-maths-quiz/">
+  <meta name="twitter:title" content="📐 منصة امتحانات ومراجعة رياضيات 1 | GEN002 Mathematics 1">
+  <meta name="twitter:description" content="تدرب على مسائل الامتحانات الحقيقية، وضع التحدي والدمار 🔥، وحاسبة التفاضل خطوة بخطوة ⚡">
+  <meta name="twitter:image" content="https://kokohema2007-cloud.github.io/online-maths-quiz/og-image.jpg">
+
+  <!-- Google Fonts: Cairo & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for Beautiful Mathematical Formula Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Platform Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Canvas for Extreme Mode Fiery Particle Background -->
+  <canvas id="extremeCanvas" class="extreme-canvas"></canvas>
+  <div class="extreme-vignette"></div>
+
+  <div class="container">
+    <!-- Header & Hero -->
+    <header class="app-header">
+      <div class="top-bar">
+        <div class="logo-area">
+          <div class="logo-icon">
+            <span style="font-size: 1.8rem;">📐</span>
+          </div>
+          <div class="logo-text">
+            <h1>منصة الامتحانات والمراجعة التفاعلية لمادة الرياضيات 1</h1>
+            <p>GEN002: Mathematics 1 • جامعة حلوان الأهلية - كلية الهندسة • إشراف: د. أماني محمد</p>
+          </div>
+        </div>
+        <div class="header-controls">
+          <button id="soundToggleBtn" class="btn-icon" title="تشغيل / كتم المؤثرات الصوتية">🔊</button>
+          <button id="themeToggleBtn" class="btn-icon" title="تبديل المظهر">☀️</button>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">الأسئلة المجابة</div>
+          <div class="stat-value" id="statTotal">0 / 0</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="stat-label">الإجابات الصحيحة</div>
+          <div class="stat-value" id="statCorrect">0</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="stat-label">الإجابات الخاطئة</div>
+          <div class="stat-value" id="statWrong">0</div>
+        </div>
+        <div class="stat-card score">
+          <div class="stat-label">نسبة الإتقان</div>
+          <div class="stat-value" id="statScorePct">0%</div>
+        </div>
+        <div class="stat-card streak">
+          <div class="stat-label">سلسلة الإجابات 🔥</div>
+          <div class="stat-value" id="statStreak">0 🔥</div>
+        </div>
+      </div>
+
+      <!-- Overall Progress -->
+      <div class="progress-container">
+        <div class="progress-header">
+          <span id="progressText">مستوى الإنجاز: 0 من 0 (0%)</span>
+          <span>التقييم المستمر للجامعة</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Categories & Filter Tabs -->
+    <div class="tabs-scroll-wrapper">
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">
+          <span>🌐 جميع الأسئلة</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="true_false">
+          <span>🔘 صح أو خطأ (T/F)</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="mcq">
+          <span>📝 اختيار من متعدد (MCQ)</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="calc">
+          <span>📐 حساب نواتج وميول</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="errors">
+          <span>🛠️ تصحيح أخطاء التفاضل</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="rules">
+          <span>⚡ قواعد التفاضل والسلسلة</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="trig">
+          <span>📐 دوال مثلثية وعكوسها</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="hyperbolic">
+          <span>〰️ دوال زائدية وعكوسها</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="implicit">
+          <span>🔄 اشتقاق ضمني ولوغاريتمي</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="limits">
+          <span>♾️ نهايات وقاعدة لوبيتال</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="partial">
+          <span>🌐 مشتقات جزئية وتوافقية</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="logic">
+          <span>🧠 منطق ومجموعات ودوال</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn" data-category="essay">
+          <span>✍️ أسئلة مقالية وإثباتات</span>
+          <span class="tab-count">0</span>
+        </button>
+        <button class="tab-btn extreme-tab-btn" data-category="extreme" id="extremeTabBtn">
+          <span>💀 أسئلة التحدي والدمار 🔥</span>
+          <span class="tab-count">10</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Actions & Search Bar -->
+    <div class="actions-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchQuestionsInput" placeholder="ابحث عن قانون، دالة، مشتقة، أو مسألة معينة...">
+      </div>
+      <div class="action-buttons">
+        <button id="examReportBtn" class="btn-primary report-btn">
+          <span>📊 تقرير وتشخيص الأداء بالذكاء الاصطناعي</span>
+        </button>
+        <button id="mistakesOnlyBtn" class="btn-secondary">
+          <span>🎯 مراجعة الأخطاء فقط</span>
+        </button>
+        <button id="resetAllBtn" class="btn-secondary" title="إعادة تعيين كافة الإجابات والبدء من الصفر">
+          <span>🔄 تصفير النتيجة</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Extreme Mode Warning Fiery Banner -->
+    <div id="extremeBanner" class="extreme-banner" style="display: none;">
+      <div class="extreme-banner-content">
+        <span class="extreme-fire-icon">🔥💀🔥</span>
+        <div class="extreme-banner-text">
+          <h2>⚠️ وضع الدمار الأقصى مفعل (FINAL BOSS LEVEL) ⚠️</h2>
+          <p>أنت الآن في المنطقة الحمراء — مسائل امتحان الميدتيرم الحقيقي للدكتورة أماني محمد وأعقد إثباتات المنهج الجامعي!</p>
+        </div>
+        <span class="extreme-fire-icon">🔥💀🔥</span>
+      </div>
+    </div>
+
+    <!-- Main Questions Container -->
+    <main id="questionsList" class="questions-list"></main>
+
+    <!-- ==================================================================== -->
+    <!-- INTERACTIVE CALCULUS & LOGIC STUDIO (المختبر الرياضي التفاعلي)       -->
+    <!-- ==================================================================== -->
+    <section class="question-card math-simulator-container" id="mathSimulatorSection">
+      <div class="q-meta">
+        <span class="q-badge sim-main-badge">🛠️ الأداة التدريبية والمحاكي التفاعلي المدمج</span>
+        <span class="q-source">GEN002 Calculus & Logic Simulator</span>
+      </div>
+      <h3 class="q-title" style="font-size: 1.4rem;">المختبر التفاعلي لحسابات التفاضل والمتطابقات الزائدية وجداول الصواب</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+        أداة تدريب متطورة تتيح لك تجربة قواعد التفاضل خطوة بخطوة، حساب معادلات خط المماس والعمودي، استنتاج جميع متطابقات الدوال الزائدية، وتوليد جداول الصواب المنطقية لمسألة الميدتيرم تلقائياً:
+      </p>
+
+      <!-- Simulator Tabs Navigation -->
+      <div class="sim-tabs-nav">
+        <button type="button" class="sim-tab-btn active" data-tab="deriv">
+          <span>⚡ حاسبة المشتقات خطوة بخطوة</span>
+        </button>
+        <button type="button" class="sim-tab-btn" data-tab="tangent">
+          <span>📐 حاسبة خط المماس والعمودي</span>
+        </button>
+        <button type="button" class="sim-tab-btn" data-tab="hyperbolic">
+          <span>〰️ مستنتج الدوال الزائدية التبادلي</span>
+        </button>
+        <button type="button" class="sim-tab-btn" data-tab="truthtable">
+          <span>🧠 محاكي جداول الصواب المنطقية</span>
+        </button>
+      </div>
+
+      <!-- Tab 1: Step-by-Step Derivative Solver -->
+      <div class="sim-tab-content active" id="sim-tab-deriv">
+        <div class="sim-controls-bar">
+          <div class="sim-control-group">
+            <label for="derivFunctionSelect">اختر مسألة أو دالة معيارية من المنهج:</label>
+            <select id="derivFunctionSelect" class="sim-select">
+              <option value="ex1">Example 1: f(x) = x² (Power Rule & Tangent)</option>
+              <option value="ex4_poly">Example 4(i): f(x) = 5x³ + 3x - 7 (Polynomial)</option>
+              <option value="ex4_quot">Example 4(iii): h(x) = (5x³ + 3x - 7)/(4x² + 5) (Quotient Rule)</option>
+              <option value="ex5_chain">Example 5(i): f(x) = (x⁵ - 4x + 8)⁷ (Chain Rule Power)</option>
+              <option value="ex16_arctan">Example 16: f(x) = tan⁻¹(x) (Inverse Trig Rule)</option>
+              <option value="ex21_hyp">Example 21(i): f(x) = cosh(√(x³)) (Hyperbolic Chain Rule)</option>
+            </select>
+          </div>
+          <button type="button" id="calcDerivBtn" class="btn-primary" style="margin-top: 1.5rem;">
+            <span>🚀 إظهار خطوات الاشتقاق التفصيلية</span>
+          </button>
+        </div>
+
+        <!-- Quick Preset Pills -->
+        <div class="sim-presets-pills">
+          <span style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">نماذج سريعة من المقرر:</span>
+          <button type="button" class="deriv-preset-btn" data-preset="ex1">📌 س1: x²</button>
+          <button type="button" class="deriv-preset-btn" data-preset="ex4_poly">📌 س2: كثيرة حدود</button>
+          <button type="button" class="deriv-preset-btn" data-preset="ex4_quot">📌 س3: قسمة دالتين</button>
+          <button type="button" class="deriv-preset-btn" data-preset="ex5_chain">📌 س4: سلسلة قوس مرفوع لأس</button>
+          <button type="button" class="deriv-preset-btn" data-preset="ex16_arctan">📌 س5: arctan(x)</button>
+          <button type="button" class="deriv-preset-btn" data-preset="ex21_hyp">📌 س6: cosh(√(x³))</button>
+        </div>
+
+        <!-- Output Steps Container -->
+        <div id="derivStepsOutput" class="sim-output-box"></div>
+      </div>
+
+      <!-- Tab 2: Tangent & Normal Line Calculator -->
+      <div class="sim-tab-content" id="sim-tab-tangent">
+        <div class="tang-controls-grid">
+          <div class="sim-control-group">
+            <label for="tangFuncSelect">نوع الدالة للمماس:</label>
+            <select id="tangFuncSelect" class="sim-select">
+              <option value="parabola">f(x) = x² (منحنى تربيعي كلاسيكي - Example 3)</option>
+              <option value="cubic">f(x) = x³ - 3x (منحنى تكعيبي ذو نقاط انقلاب)</option>
+              <option value="reciprocal">f(x) = 1/x (دالة كسرية مقلوبة)</option>
+            </select>
+          </div>
+          <div class="sim-control-group">
+            <label for="tangXInput">قيمة الإحداثي السيني لنقطة التماس ($x_0$):</label>
+            <input type="number" id="tangXInput" class="sim-input" value="2" step="0.5">
+          </div>
+        </div>
+        <div id="tangentResultOutput" class="sim-output-box" style="margin-top: 1.5rem;"></div>
+      </div>
+
+      <!-- Tab 3: Hyperbolic Identity Evaluator -->
+      <div class="sim-tab-content" id="sim-tab-hyperbolic">
+        <div class="sim-controls-bar">
+          <div class="sim-control-group" style="max-width: 400px;">
+            <label for="hypSinhInput">أدخل قيمة $\sinh x$ (مثل 0.75 من Example 19 ص 37):</label>
+            <input type="number" id="hypSinhInput" class="sim-input" value="0.75" step="0.05">
+          </div>
+          <div style="color: var(--text-muted); font-size: 0.85rem; align-self: flex-end; padding-bottom: 0.5rem;">
+            💡 يتم استنتاج الدوال الخمس الأخرى فورياً باستخدام المتطابقة $\cosh^2 x - \sinh^2 x = 1$.
+          </div>
+        </div>
+        <div id="hyperbolicOutputGrid" class="hyperbolic-cards-grid" style="margin-top: 1.5rem;"></div>
+      </div>
+
+      <!-- Tab 4: Interactive Truth Table Simulator -->
+      <div class="sim-tab-content" id="sim-tab-truthtable">
+        <div class="sim-controls-bar">
+          <div class="sim-control-group" style="max-width: 450px;">
+            <label for="ttPresetSelect">اختر العبارة المنطقية لتوليد جدول الصواب:</label>
+            <select id="ttPresetSelect" class="sim-select">
+              <option value="midterm_q3">سؤال 3 ميدتيرم حلوان: ((¬p ↔ q) ⊕ (p ∧ ¬q)) → ¬q</option>
+              <option value="demorgan">قانون دي مورجان: ¬(p ∧ q) ↔ (¬p ∨ ¬q)</option>
+            </select>
+          </div>
+        </div>
+        <div id="truthTableOutput" class="sim-output-box" style="margin-top: 1.5rem;"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>📐 GEN002 Mathematics 1 Revision Platform</h3>
+          <p>جامعة حلوان الأهلية • كلية الهندسة • برنامج هندسة الشبكات والأمن السيبراني</p>
+        </div>
+        <div class="footer-pills">
+          <span class="f-pill">PWA Ready 📱</span>
+          <span class="f-pill">KaTeX Rendered ✍️</span>
+          <span class="f-pill">Web Audio Synthesizer 🔊</span>
+          <span class="f-pill">Pure Vanilla ES6+ ⚡</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>مبني بأعلى المعايير البرمجية كود قياسي خالص جاهز للنشر على GitHub Pages مجاناً • 2026</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 1: AI TUTOR DIAGNOSTIC REPORT MODAL                            -->
+  <!-- ==================================================================== -->
+  <div id="aiTutorModal" class="app-modal">
+    <div class="modal-card">
+      <button type="button" id="closeAiTutorBtn" class="modal-close-btn" title="إغلاق التقرير">✕</button>
+      <div id="aiTutorModalBody" class="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- ==================================================================== -->
+  <!-- MODAL 2: EXTREME MODE CINEMATIC ENTRANCE MODAL                      -->
+  <!-- ==================================================================== -->
+  <div id="extremeWarningModal" class="app-modal">
+    <div class="modal-card extreme-modal-card">
+      <div class="extreme-modal-header">
+        <span class="extreme-skull">💀🔥💀</span>
+        <h2>تحذير: دخول وضع الدمار الشامل!</h2>
+        <p>FINAL BOSS LEVEL • GEN002 Mathematics 1</p>
+      </div>
+      <div class="extreme-modal-body">
+        <p>أنت الآن بصدد خوض أصعب اختبارات المادة: مسائل امتحان الميدتيرم الحقيقية للدكتورة أماني محمد (جامعة حلوان الأهلية)، الإثباتات التفاضلية الثلاثية المعقدة، والاشتقاقات اللوغاريتمية ذات السبعة حدود!</p>
+        <div class="extreme-rules-box">
+          <ul>
+            <li>🚫 لا يسمح بالتخمين العشوائي — يتم قفل الإجابة فورياً.</li>
+            <li>🔥 كل خطأ يصفر عداد السلسلة الملحمي (Streak).</li>
+            <li>🧠 استعن بالمختبر الرياضي التفاعلي وقوانين الدوال الزائدية.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="extreme-modal-footer">
+        <button type="button" id="closeExtremeModalBtn" class="btn-primary extreme-proceed-btn">
+          <span>💀 أنا جاهز للتحدي — ابدأ الدمار!</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="questions.js"></script>
+  <script src="extreme_questions.js"></script>
+  <script src="math_simulator.js"></script>
+  <script src="ai_tutor.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Service Worker Registration for PWA Offline Support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(err => {
+          console.log('SW registration optional:', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
